@@ -27,26 +27,28 @@ def compute_height(node):
             heights.append(compute_height(child))
         return 1 + max(heights)
 
-first_input = input().strip()
-print(f"first_input: {first_input}")
-if first_input.startswith("I" or "F"):
-    try:
-        second_input = input()
-        n = int(second_input)
-        parent = list(map(int, input().split()))
-    except EOFError:
-        print("Error: incomplete input")
-        exit(1)
-else:
-    try:
-        n = int(first_input)
-        parent = list(map(int, input().split()))
-    except EOFError:
-        print("Error: incomplete input")
-        exit(1)
+first_input = input()
 
-print(f"n: {n}")
-print(f"parent: {parent}")
+if first_input.startswith("I"):
+    second_input = input()
+    n = int(second_input)
+elif input_source == "F":
+    filename = input()
+    if "a" in filename.lower():
+        print("Filename contains letter 'a', please enter a different filename.")
+    else:
+        if filename.lower() == 'i':
+            n = int(input())
+            parent = list(map(int, input().split()))
+        elif filename.lower() == 'f':
+            file = input("Enter file path: ")
+            with open(file, "r", encoding="utf-8") as f:
+                n = int(f.readline())
+                parent = list(map(int, f.readline().split()))
+        else:
+            print("Invalid input. Please enter 'i' for keyboard input or 'f' for file input.")
+
+parent = list(map(int, input().split()))
 
 nodes = []
 for i in range(n):
@@ -59,3 +61,4 @@ for i in range(n):
         nodes[parent[i]].children.append(nodes[i])
 
 print(compute_height(root))
+ 
