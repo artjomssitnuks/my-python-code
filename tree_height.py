@@ -7,7 +7,7 @@ class Node:
         self.children = []
 
 def compute_height(root):
-    height = 0
+    height = 1
     queue = [root]
     while queue:
         level_size = len(queue)
