@@ -32,14 +32,14 @@ first_input = input()
 if first_input.startswith("I"):
     second_input = input()
     n = int(second_input)
-elif first_input == "F":
+elif first_input.startswith("F"):
     filename = input()
     if "a" in filename.lower():
         print("Filename contains letter 'a', please enter a different filename.")
     else:
         if filename.lower() == 'i':
-            n = int(input())
-            parent = list(map(int, input().split()))
+            second_input = input()
+            n = int(second_input)
         elif filename.lower() == 'f':
             file = input("Enter file path: ")
             with open(file, "r", encoding="utf-8") as f:
