@@ -51,10 +51,10 @@ elif first_input == "F":
 parent = list(map(int, input().split()))
 
 nodes = []
-for i in range(n):
+for i in range(first_input):
     nodes.append(Node(i))
 
-for i in range(n):
+for i in range(first_input):
     if parent[i] == -1:
         root = nodes[i]
     else:
