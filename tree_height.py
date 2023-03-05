@@ -45,8 +45,6 @@ elif first_input.startswith("F"):
             with open(file, "r", encoding="utf-8") as f:
                 n = int(f.readline())
                 parent = list(map(int, f.readline().split()))
-        else:
-            print("Invalid input. Please enter 'i' for keyboard input or 'f' for file input.")
 
 parent = list(map(int, input().split()))
 
