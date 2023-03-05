@@ -32,7 +32,7 @@ first_input = input()
 if first_input.startswith("I"):
     second_input = input()
     n = int(second_input)
-elif input_source == "F":
+elif first_input == "F":
     filename = input()
     if "a" in filename.lower():
         print("Filename contains letter 'a', please enter a different filename.")
