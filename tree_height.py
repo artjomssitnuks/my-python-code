@@ -1,25 +1,13 @@
 import os.path
-"""
-A program to compute the height of a binary tree.
-"""
+
 class Node:
-    """
-    A class representing a node in a binary tree.
-    value -- the value of the node.
-    children -- a list of the node's children.
-    """
+    
     def __init__(self, value):
         self.value = value
         self.children = []
 
 def compute_height(node):
-    """
-    Compute the height of a binary tree with the given root node.
     
-    node -- the root node of the binary tree.
-
-    Returns the height of the binary tree.
-    """
     if not node.children:
         return 1
     else:
