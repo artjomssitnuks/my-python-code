@@ -29,12 +29,20 @@ def compute_height(node):
 
 first_input = input()
 if first_input.startswith("I"):
-    second_input = input()
-    n = int(second_input)
+    try:
+        second_input = input()
+        n = int(second_input)
+        parent = list(map(int, input().split()))
+    except EOFError:
+        print("Error: incomplete input")
+        exit(1)
 else:
-    n = int(input())
-
-parent = list(map(int, input().split()))
+    try:
+        n = int(input())
+        parent = list(map(int, input().split()))
+    except EOFError:
+        print("Error: incomplete input")
+        exit(1)
 
 nodes = []
 for i in range(n):
@@ -47,3 +55,4 @@ for i in range(n):
         nodes[parent[i]].children.append(nodes[i])
 
 print(compute_height(root))
+
