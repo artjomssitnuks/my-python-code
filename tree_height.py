@@ -6,14 +6,16 @@ class Node:
         self.value = value
         self.children = []
 
-def compute_height(node):
+def compute_height(node, visited):
     
     if not node.children:
         return 1
     else:
         heights = []
         for child in node.children:
-            heights.append(compute_height(child))
+            if child not in visited:
+                visited.add(child)
+                heights.append(compute_height(child, visited))
         return 1 + max(heights)
 
 first_input = input()
@@ -42,4 +44,5 @@ for i in range(n):
     else:
         nodes[parent[i]].children.append(nodes[i])
 
-print(compute_height(root))
+print(compute_height(root, set()))
+
