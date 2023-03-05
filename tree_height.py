@@ -29,7 +29,7 @@ def compute_height(node):
 
 first_input = input().strip()
 print(f"first_input: {first_input}")
-if first_input.startswith("I"):
+if first_input.startswith("I" or "F"):
     try:
         second_input = input()
         n = int(second_input)
