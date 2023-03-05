@@ -42,12 +42,6 @@ elif first_input.startswith("F"):
         with open(filename, "r") as f:
             n = int(f.readline())
             parent = list(map(int, f.readline().split()))
-    else:
-        print("Error: file not found")
-        exit()
-else:
-    print("Error: invalid input")
-    exit()
 
 nodes = []
 for i in range(n):
