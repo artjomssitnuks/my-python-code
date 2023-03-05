@@ -19,17 +19,18 @@ def compute_height(node):
 first_input = input()
 
 if first_input.startswith("I"):
-    # read input from standard input
     second_input = input()
     n = int(second_input)
     parent = list(map(int, input().split()))
 elif first_input.startswith("F"):
-    # read input from file
-    filename = input()
-    if os.path.isfile(filename):
-        with open(filename, "r") as f:
-            n = int(f.readline())
-            parent = list(map(int, f.readline().split()))
+    filename = str(input())
+    if 'a' in filename:
+        print("Invalid filename")
+        exit()
+    filename = "test/" + filename
+    with open(filename)\, 'r') as f:
+        n = int(f.readline())
+        parent = [int(x) for x in f.readline().split()]
 
 nodes = []
 for i in range(n):
