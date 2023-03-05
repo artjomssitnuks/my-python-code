@@ -1,3 +1,4 @@
+import os.path
 """
 A program to compute the height of a binary tree.
 """
