@@ -27,7 +27,7 @@ def compute_height(node):
             heights.append(compute_height(child))
         return 1 + max(heights)
 
-first_input = input()
+first_input = input().strip()
 print(f"first_input: {first_input}")
 if first_input.startswith("I"):
     try:
