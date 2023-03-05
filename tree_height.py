@@ -28,7 +28,8 @@ def compute_height(node):
         return 1 + max(heights)
 
 first_input = input()
-if first_input.startswith("I" or "F"):
+print(f"first_input: {first_input}")
+if first_input.startswith("I"):
     try:
         second_input = input()
         n = int(second_input)
@@ -38,11 +39,14 @@ if first_input.startswith("I" or "F"):
         exit(1)
 else:
     try:
-        n = int(input())
+        n = int(first_input)
         parent = list(map(int, input().split()))
     except EOFError:
         print("Error: incomplete input")
         exit(1)
+
+print(f"n: {n}")
+print(f"parent: {parent}")
 
 nodes = []
 for i in range(n):
