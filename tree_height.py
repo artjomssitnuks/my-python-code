@@ -32,6 +32,7 @@ first_input = input()
 if first_input.startswith("I"):
     second_input = input()
     n = int(second_input)
+    parent = list(map(int, input().split()))
 elif first_input.startswith("F"):
     filename = input()
     if "a" in filename.lower():
@@ -40,13 +41,24 @@ elif first_input.startswith("F"):
         if filename.lower() == 'i':
             second_input = input()
             n = int(second_input)
+            parent = list(map(int, input().split()))
         elif filename.lower() == 'f':
             file = input("Enter file path: ")
             with open(file, "r", encoding="utf-8") as f:
                 n = int(f.readline())
-                parent = list(map(int, f.readline().split()))
-
-parent = list(map(int, input().split()))
+                try:
+                    parent = list(map(int, f.readline().split()))
+                    if len(parent) != n:
+                        raise ValueError("Invalid input: parent array has incorrect length.")
+                except ValueError as e:
+                    print(e)
+                    exit(1)
+        else:
+            print("Invalid input")
+            exit(1)
+else:
+    print("Invalid input")
+    exit(1)
 
 nodes = []
 for i in range(n):
@@ -59,4 +71,3 @@ for i in range(n):
         nodes[parent[i]].children.append(nodes[i])
 
 print(compute_height(root))
- 
