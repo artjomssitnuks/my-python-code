@@ -30,7 +30,7 @@ def compute_height(node):
 first_input = input()
 if first_input.startswith("I"):
     second_input = input()
-    n = second_input()
+    n = int(second_input)
 else:
     n = int(input())
 
