@@ -28,7 +28,7 @@ elif first_input.startswith("F"):
         print("Invalid filename")
         exit()
     filename = "test/" + filename
-    with open(filename)\, 'r') as f:
+    with open(filename), 'r') as f:
         n = int(f.readline())
         parent = [int(x) for x in f.readline().split()]
 
