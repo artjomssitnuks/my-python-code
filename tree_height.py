@@ -46,3 +46,4 @@ for i in range(n):
         nodes[parent[i]].children.append(nodes[i])
 
 print(compute_height(root))
+print('Goodbye')
